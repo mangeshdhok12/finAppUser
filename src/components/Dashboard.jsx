@@ -337,17 +337,19 @@ import { Link } from 'react-router-dom';
 import ActivityDetails from './dashboardComponents/ActivityDetails';
 import LatestTransactions from './dashboardComponents/LatestTransactions';
 import Footer from './layout/Footer';
+import LayoutWrapper from './layout/LayoutWrapper';
 
 
 
 
 const ServicesCard = () => {
   return (
-    <div className="layout content">
-  <div className="content-body">
-    <div className="card card-custom">
-      <div className="card-body">
-        <div className="row rowTop">
+  //   <div className="layout content">
+  // <div className="content-body">
+  <LayoutWrapper>
+    <div className="card card-custom rowTop">
+      <div className="card-body ">
+        <div className="row ">
           {/* First Row of Services */}
           <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
 >
@@ -501,8 +503,17 @@ const ServicesCard = () => {
             </div>
           </div>
           <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
->
-            <div className="d-flex flex-column align-items-center text-center">
+>      <Link to="/insurance" className="symbol-container">
+                <span className="symbol-label">
+                  <img
+                    src={insuranceIcon}
+                    className="symbol-image img-fluid"
+                    alt="Insurance"
+                  />
+                </span>
+                <span className="symbol-title text-primary font-weight-bold">Insurance</span>
+              </Link>
+            {/* <div className="d-flex flex-column align-items-center text-center">
               <Link to="/cms-service" className="symbol-container">
                 <span className="symbol-label">
                   <img
@@ -513,27 +524,13 @@ const ServicesCard = () => {
                 </span>
                 <span className="symbol-title text-primary font-weight-bold">CMS Service</span>
               </Link>
-            </div>
+            </div> */}
           </div>
          
            {/* Second Row of Services */}
            <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
 >
             <div className="d-flex flex-column align-items-center text-center">
-              <Link to="/insurance" className="symbol-container">
-                <span className="symbol-label">
-                  <img
-                    src={insuranceIcon}
-                    className="symbol-image img-fluid"
-                    alt="Insurance"
-                  />
-                </span>
-                <span className="symbol-title text-primary font-weight-bold">Insurance</span>
-              </Link>
-            </div>
-          </div>
-          <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
->
             <div className="d-flex flex-column align-items-center text-center">
               <Link to="/creditCard-bills" className="symbol-container">
                 <span className="symbol-label">
@@ -550,10 +547,40 @@ const ServicesCard = () => {
                 </span>
               </Link>
             </div>
+              {/* <Link to="/insurance" className="symbol-container">
+                <span className="symbol-label">
+                  <img
+                    src={insuranceIcon}
+                    className="symbol-image img-fluid"
+                    alt="Insurance"
+                  />
+                </span>
+                <span className="symbol-title text-primary font-weight-bold">Insurance</span>
+              </Link> */}
+            </div>
           </div>
           <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
 >
-            <div className="d-flex flex-column align-items-center text-center">
+            {/* <div className="d-flex flex-column align-items-center text-center">
+              <Link to="/creditCard-bills" className="symbol-container">
+                <span className="symbol-label">
+                  <img
+                    src={cardIcon}
+                    className="symbol-image img-fluid"
+                    alt="Credit Card Bills"
+                  />
+                </span>
+                <span className="symbol-title text-primary font-weight-bold">
+                  Credit Card
+                  <br />
+                  Bills
+                </span>
+              </Link>
+            </div> */}
+          </div>
+          <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
+>
+            {/* <div className="d-flex flex-column align-items-center text-center">
               <Link to="/load-request" className="symbol-container">
                 <span className="symbol-label">
                   <img
@@ -568,11 +595,11 @@ const ServicesCard = () => {
                   Request
                 </span>
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
 >
-            <div className="d-flex flex-column align-items-center text-center">
+            {/* <div className="d-flex flex-column align-items-center text-center">
               <Link to="/scan-qr" className="symbol-container">
                 <span className="symbol-label">
                   <img
@@ -583,11 +610,11 @@ const ServicesCard = () => {
                 </span>
                 <span className="symbol-title text-primary font-weight-bold">Scan QR</span>
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className="col-6 col-sm-4 col-md-3 col-lg-1-5 mb-3"
 >
-            <div className="d-flex flex-column align-items-center text-center">
+            {/* <div className="d-flex flex-column align-items-center text-center">
               <Link to="/pancard" className="symbol-container">
                 <span className="symbol-label">
                   <img
@@ -598,7 +625,7 @@ const ServicesCard = () => {
                 </span>
                 <span className="symbol-title text-primary font-weight-bold">Pancard</span>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* End of Second Row of Services */}
@@ -615,10 +642,10 @@ const ServicesCard = () => {
           </div>
         </div>
       
-  </div>
+  {/* </div> */}
   <Footer/>
-</div>
-
+{/* </div> */}
+</LayoutWrapper>
 
   );
 };

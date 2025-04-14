@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Table } from 'react-bootstrap';
 
-const DthTransactions = () => {
+const UtilityBillTrans = () => {
   const transactions = [
     // { id: '1325315', date: '21.06.2024 20:20:35', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
     // { id: '1325313', date: '21.06.2024 20:18:50', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
@@ -72,4 +72,4 @@ const DthTransactions = () => {
   );
 };
 
-export default DthTransactions;
+export default UtilityBillTrans;

@@ -165,7 +165,7 @@ const Login = () => {
         toast.success("Login Successful! Redirecting to the dashboard.");
   
         // Redirect to the dashboard
-        navigate("/payout/dashboard");
+        navigate("/users/payout/dashboard");
       } else {
         // Handle failed login
         toast.error("Login failed. Please check your credentials.");

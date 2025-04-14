@@ -7,6 +7,7 @@ import user from "../../assets/user.jpg";
 import { toast, ToastContainer  } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles.css";
+import { toggleSidebar } from "../../store/sidebarSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ const Header = () => {
 
   const handleModeChange = (selectedMode) => {
     dispatch(toggleMode(selectedMode));
-    navigate(`/${selectedMode}/dashboard`);
+    navigate(`/users/${selectedMode}/dashboard`);
   };
 
   const toggleDropdown = () => {
@@ -81,13 +82,22 @@ const Header = () => {
     // setUser(null); (if using state to track user)
   };
 
+  // const handleMenuClick = (e) => {
+  //   e.preventDefault();
+  //   // alert("hi")
+  //   dispatch(toggleSidebar());
+  // };
+
   return (
     <div className="header sticky">
       <div className="header-left">
         <div className="page-title">
-          <a id="mobileMenu" href="#" className="content-mobile">
+          {/* <a id="mobileMenu" href="#" className="content-mobile">
             <span></span>
-          </a>
+          </a> */}
+            {/* <a onClick={handleMenuClick} id="mobileMenu" href="#" className="content-mobile">
+            <span></span>
+          </a> */}
           <p>{pageTitle}</p>
         </div>
       </div>

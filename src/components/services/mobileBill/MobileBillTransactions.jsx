@@ -3,11 +3,11 @@ import { Card, Table } from 'react-bootstrap';
 
 const MobileBillTransactions = () => {
   const transactions = [
-    { id: '1325315', date: '21.06.2024 20:20:35', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
-    { id: '1325313', date: '21.06.2024 20:18:50', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
-    { id: '1325312', date: '21.06.2024 20:17:06', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
-    { id: '1321734', date: '28.05.2024 15:42:50', customer: '9853186870', amount: '10.00', operator: 'RELIANCE JIO', operatorId: '', status: 'Failed' },
-    { id: '1305616', date: '19.04.2024 19:19:55', customer: '9937764941', amount: '65.00', operator: 'AIRTEL', operatorId: '4375830', status: 'Successful' },
+    // { id: '1325315', date: '21.06.2024 20:20:35', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
+    // { id: '1325313', date: '21.06.2024 20:18:50', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
+    // { id: '1325312', date: '21.06.2024 20:17:06', customer: '9348002739', amount: '1.00', operator: 'MONEY TRANSFER', operatorId: '', status: 'Successful' },
+    // { id: '1321734', date: '28.05.2024 15:42:50', customer: '9853186870', amount: '10.00', operator: 'RELIANCE JIO', operatorId: '', status: 'Failed' },
+    // { id: '1305616', date: '19.04.2024 19:19:55', customer: '9937764941', amount: '65.00', operator: 'AIRTEL', operatorId: '4375830', status: 'Successful' },
   ];
 
   return (
@@ -61,7 +61,10 @@ const MobileBillTransactions = () => {
                   </tr>
                 ))}
               </tbody>
+            
+
             </Table>
+            <h5>No data</h5>
           </div>
         </Card.Body>
       </Card>

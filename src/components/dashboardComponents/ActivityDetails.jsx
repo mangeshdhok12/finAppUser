@@ -7,15 +7,18 @@ import slide2 from "../../assets/userIcons/slide2.jpg";
 const ActivityDetails = () => {
   return (
     <div className="card card-custom">
-      <div className="card-header">
-        <div className="card-title">
-          <span className="card-icon">
+      <div className="card-header bg-light border-bottom py-2 px-3  bg-dark">
+        <div className="card-title ">
+          {/* <span className="card-icon">
             <i className="flaticon2-chat-1 text-primary"></i>
-          </span>
-          <h3 className="card-title">
-            Activity <small className="text-muted">Details</small>
-          </h3>
+          </span> */}
+          <h5 className="mb-0 text-white">
+            Activity Details <small className="text-muted mb-0 text-white">Details</small>
+          </h5>
         </div>
+        {/* <div className="bg-light border-bottom py-2 px-3  bg-dark">
+      <h5 className="mb-0 text-white">Mobile Recharge</h5>
+    </div> */}
       </div>
       <div className="card-body">
         <div className="row">

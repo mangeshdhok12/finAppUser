@@ -2,69 +2,69 @@ import React from 'react';
 import { Card, Table } from 'react-bootstrap';
 
 const transactions = [
-  {
-    transId: '1325315',
-    date: '21.06.2024 20:20:35',
-    customer: '9348002739',
-    amount: '1.00',
-    operator: 'MONEY TRANSFER',
-    operatorId: '',
-    status: 'Successful',
-    statusClass: 'success',
-  },
-  {
-    transId: '1325313',
-    date: '21.06.2024 20:18:50',
-    customer: '9348002739',
-    amount: '1.00',
-    operator: 'MONEY TRANSFER',
-    operatorId: '',
-    status: 'Successful',
-    statusClass: 'success',
-  },
-  {
-    transId: '1325312',
-    date: '21.06.2024 20:17:06',
-    customer: '9348002739',
-    amount: '1.00',
-    operator: 'MONEY TRANSFER',
-    operatorId: '',
-    status: 'Successful',
-    statusClass: 'success',
-  },
-  {
-    transId: '1321734',
-    date: '28.05.2024 15:42:50',
-    customer: '9853186870',
-    amount: '10.00',
-    operator: 'RELIANCE JIO',
-    operatorId: '',
-    status: 'Failed',
-    statusClass: 'danger',
-  },
-  {
-    transId: '1305616',
-    date: '19.04.2024 19:19:55',
-    customer: '9937764941',
-    amount: '65.00',
-    operator: 'AIRTEL',
-    operatorId: '4375830',
-    status: 'Successful',
-    statusClass: 'success',
-  },
+  // {
+  //   transId: '1325315',
+  //   date: '21.06.2024 20:20:35',
+  //   customer: '9348002739',
+  //   amount: '1.00',
+  //   operator: 'MONEY TRANSFER',
+  //   operatorId: '',
+  //   status: 'Successful',
+  //   statusClass: 'success',
+  // },
+  // {
+  //   transId: '1325313',
+  //   date: '21.06.2024 20:18:50',
+  //   customer: '9348002739',
+  //   amount: '1.00',
+  //   operator: 'MONEY TRANSFER',
+  //   operatorId: '',
+  //   status: 'Successful',
+  //   statusClass: 'success',
+  // },
+  // {
+  //   transId: '1325312',
+  //   date: '21.06.2024 20:17:06',
+  //   customer: '9348002739',
+  //   amount: '1.00',
+  //   operator: 'MONEY TRANSFER',
+  //   operatorId: '',
+  //   status: 'Successful',
+  //   statusClass: 'success',
+  // },
+  // {
+  //   transId: '1321734',
+  //   date: '28.05.2024 15:42:50',
+  //   customer: '9853186870',
+  //   amount: '10.00',
+  //   operator: 'RELIANCE JIO',
+  //   operatorId: '',
+  //   status: 'Failed',
+  //   statusClass: 'danger',
+  // },
+  // {
+  //   transId: '1305616',
+  //   date: '19.04.2024 19:19:55',
+  //   customer: '9937764941',
+  //   amount: '65.00',
+  //   operator: 'AIRTEL',
+  //   operatorId: '4375830',
+  //   status: 'Successful',
+  //   statusClass: 'success',
+  // },
 ];
 
 const LatestTransactions = () => {
   return (
     <Card className="card-custom">
-      <Card.Header>
+      <Card.Header className=' bg-light border-bottom py-2 px-3  bg-dark'>
         <Card.Title>
           <span className="card-icon">
             <i className="flaticon2-chat-1 text-primary"></i>
           </span>
-          <h3 className="card-label">
+          <h5 className="card-label text-white">
             Latest <small>Transactions</small>
-          </h3>
+          </h5>
         </Card.Title>
       </Card.Header>
       <Card.Body>
@@ -112,7 +112,9 @@ const LatestTransactions = () => {
                 </tr>
               ))}
             </tbody>
+            
           </Table>
+          <h5>No data</h5>
         </div>
       </Card.Body>
     </Card>
