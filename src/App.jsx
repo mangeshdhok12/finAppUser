@@ -48,6 +48,12 @@ const RefundedTransactions = lazy(() => import('./components/reports//RefundedTr
 const DmtTransactions = lazy(() => import('./components/reports//DmtTransactions'));
 const PayoutTransactions = lazy(() => import('./components/reports//PayoutTransactions'));
 
+// Helpdesk
+const BookComplaint = lazy(() => import('./components/helpdesk//BookComplaint'));
+const ViewComplaint = lazy(() => import('./components/helpdesk//ViewComplaint'));
+
+// Rental Payment
+const RentalPayment = lazy(() => import('./components/rentalPayment/RentalPayment'));
 
 
 function App() {
@@ -89,12 +95,18 @@ function App() {
                       <Route path="/bulk-transfer" element={<BulkTransfer />} />
                       <Route path="/account-statements" element={<AccountStatements />} />
                       <Route path="/reports" element={<Reports />} />
+
+                      
                      
                      {/*  Services */}
                       <Route path="/mobile-recharge" element={<MobileRecharge />} />
                       <Route path="/dth-recharge" element={<DTHRecharge />} />
                       <Route path="/mobile-bills" element={<MobileBill />} />
                       <Route path="/utility-bills" element={<UtilityBills />} />
+  
+                        {/* Rental Payment */}
+                      <Route path="/RentalPayment" element={<RentalPayment />} />
+
 
                      {/* Banking Services */}
                       <Route path="/dmt" element={<Dmt />} />
@@ -115,8 +127,11 @@ function App() {
                       <Route path="/dmt-transactions" element={<DmtTransactions />} />
                       <Route path="/payouts-transactions" element={<PayoutTransactions />} />
 
-                      
+                      {/* HelpDesk */}
+                      <Route path="/book-complaint" element={<BookComplaint />} />
+                      <Route path="/view-complaint" element={<ViewComplaint />} />
 
+                      
                     </>
                   ) : (
                     /* Routes for Payin */

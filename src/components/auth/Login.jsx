@@ -120,6 +120,8 @@ import { toast, ToastContainer  } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles.css"; 
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../store/userDataSlice";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
@@ -128,6 +130,7 @@ const Login = () => {
   const [error, setError] = useState(""); 
   const [loading, setLoading] = useState(false); 
 
+  const dispatch = useDispatch();
   const navigate= useNavigate()
  
   const togglePasswordVisibility = () => {
@@ -155,13 +158,18 @@ const Login = () => {
       const response = await axios.post(loginUrl, requestBody);
   
       if (response.data.status) {
-        // Optional: Store the token if necessary
-        // localStorage.setItem("token", response.data.token);
-        console.log(response.data.data)
-        const token = response.data.data;
 
-        // Store the token (use localStorage or sessionStorage)
-        localStorage.setItem("token", token);
+        const userData = response.data.data;
+        console.log("Login Response Data:", userData);
+
+        localStorage.setItem("token", userData);
+
+             // ✅ Store data in Redux
+             dispatch(setUser(userData));
+
+      // ✅ Optional: Store token in localStorage
+      // localStorage.setItem("token", userData.token);
+
         toast.success("Login Successful! Redirecting to the dashboard.");
   
         // Redirect to the dashboard
@@ -172,6 +180,8 @@ const Login = () => {
       }
     } catch (error) {
       // General error handling
+      console.error("Login error:", error); // Add this line
+
       toast.error("An error occurred. Please try again later.");
     } finally {
       setLoading(false); // Hide loading indicator

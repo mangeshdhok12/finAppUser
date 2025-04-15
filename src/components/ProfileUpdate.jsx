@@ -3,6 +3,7 @@ import hideIcon from "../assets/icons/hide.svg"
 import showIcon from "../assets/icons/show.svg"
 import deleteIcon from "../assets/icons/deleteIcon.svg"
 import placeholder from "../assets/icons/placeholder.jpg"
+import LayoutWrapper from "./layout/LayoutWrapper";
 
 
 const ProfileUpdate = () => {
@@ -28,9 +29,10 @@ const ProfileUpdate = () => {
   };
 
   return (
-    <div className="layout content">
-    <div className="content-body">
-      <div className="py-table-wrap bg-white shadow radius-5 overflow-hidden">
+    // <div className="layout content">
+    // <div className="content-body">
+    <LayoutWrapper>
+      <div className="py-table-wrap bg-white shadow radius-5 overflow-hidden rowTop">
         <div className="py-table-head pair-tw0">
           <div className="pytbl1">
             <div className="blockheading">Profile Photo</div>
@@ -99,8 +101,8 @@ const ProfileUpdate = () => {
           </div>
         </div>
       </div>
-    </div>
-    </div>
+      </LayoutWrapper>
+   
   );
 };
 

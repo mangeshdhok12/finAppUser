@@ -453,8 +453,8 @@ const Sidebar = () => {
                    <span style={{ paddingLeft: '15px' }}>Helpdesk</span>
                    </a>
                    <nav className="nav-sub  scrollable-submenu">
-                     <Link to="/users/book-compaint" className="sub-link">Book Compaint</Link>
-                    <Link to="/users/view-compaint" className="sub-link">View Compaint</Link>
+                     <Link to="/users/book-complaint" className="sub-link">Book Compaint</Link>
+                    <Link to="/users/view-complaint" className="sub-link">View Compaint</Link>
                   </nav>
                 </li> 
                 </>

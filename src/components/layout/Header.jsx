@@ -8,6 +8,9 @@ import { toast, ToastContainer  } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles.css";
 import { toggleSidebar } from "../../store/sidebarSlice";
+import axios from "axios";
+import { setUser } from "../../store//userDataSlice";
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -15,6 +18,10 @@ const Header = () => {
   const dropdownRef = useRef(null);
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.payMode.mode);
+
+  const [error, setError] = useState(""); 
+  const [loading, setLoading] = useState(false); 
+  const [username, setUsername] = useState(""); 
 
   // Determine the mode based on the current URL
   const getModeFromPath = () => (location.pathname.startsWith("/payin") ? "payin" : "payout");
@@ -26,8 +33,44 @@ const Header = () => {
   //   setMode(getModeFromPath());
   // }, [location.pathname]);
 
+  const handleProfile = async () => {
+    console.log("handleProfile start");
+  
+    // setLoading(true); // Show loading indicator
+    setError(""); // Clear any previous errors
+  
+    const loginUrl = "http://ec2-34-237-167-173.compute-1.amazonaws.com:8080/fin-api-v1/api/users/1";  // Your URL
+  
+    try {
+      console.log("Making API request");
+      const response = await axios.get(loginUrl, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+  
+      console.log("API Response Data:", response.data); 
+      setUsername(response.data.userName) // Check the API response
+      // Continue processing the response
+  
+          // Save data to Redux store
+    dispatch(setUser(response.data));
+
+
+    } catch (error) {
+      console.error("API Error:", error); // Log any errors
+    } finally {
+      setLoading(false); // Hide loading indicator
+    }
+  };
+
   // Close dropdown when clicking outside
   useEffect(() => {
+    console.log('Component rendered');
+
+    handleProfile();
+
+
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
@@ -145,10 +188,10 @@ const Header = () => {
               <div className="user-img">
                 <img src={user} alt="User" />
               </div>
-              <span>JohnDoe</span>
+              <span>{username}</span>
             </a>
             <div className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
-              <a className="dropdown-item" href="/profile">Profile</a>
+              <a className="dropdown-item" href="/users/profile">Profile</a>
               <a className="dropdown-item" href="/login"
               onClick={handleLogout}
               >Logout</a>
